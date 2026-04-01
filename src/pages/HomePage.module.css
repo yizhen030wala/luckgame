@@ -1,0 +1,139 @@
+.container {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ── Title Frame ─────────────────────────────────── */
+/*
+  All assets are 1080×1920px full-page images.
+  At display width 288px → natural height = 288/1080×1920 = 512px.
+
+  Speech bubble in title-bg.gif occupies roughly y:30~226 of 512px.
+  We want to show only that region:
+    - container height = 226 - 30 = 196px ≈ 200px
+    - overflow: hidden clips everything outside
+    - images are positioned absolute, top: -30px to shift content up into view
+*/
+.titleFrame {
+  position: relative;
+  width: 288px;
+  height: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Both images fill the full 288px wide, positioned so bubble region is visible */
+.titleBgImg{
+  position: absolute;
+  width: 288px;
+  height: auto;   /* = 512px */
+  top: -30px;
+  left: 0;
+  display: block;
+}
+.titleDecImg {
+  position: absolute;
+  width: 288px;
+  height: auto;   /* = 512px */
+  top: -20px;
+  left: 0;
+  display: block;
+}
+
+/* Subtitle text sits inside the bubble — always dark since the bubble is always a white GIF */
+.titleText {
+  position: absolute;
+  bottom: 65px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  color: #1e1e1e;
+  font-size: 16px;
+  font-family: 'Inter', 'Noto Sans TC', sans-serif;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* ── Cat Frame ───────────────────────────────────── */
+/*
+  Cat body in cat-wakeup.gif occupies roughly y:147~437 of 512px.
+  We want to show that region:
+    - container height = 437 - 147 = 290px
+    - overflow: hidden clips
+    - image top: -147px shifts cat up into view
+*/
+.catFrame {
+  width: 288px;
+  height: 290px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.catImg {
+  position: absolute;
+  width: 288px;
+  height: auto;   /* = 512px */
+  top: -200px;
+  left: 0;
+}
+
+/* ── Action Area ─────────────────────────────────── */
+.actionArea {
+  width: 400px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.actionButtons {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 480px) {
+  .titleFrame {
+    width: 90vw;
+    max-width: 288px;
+  }
+
+  .titleBgImg,
+  .titleDecImg {
+    width: 90vw;
+    max-width: 288px;
+  }
+
+  .catFrame {
+    width: 90vw;
+    max-width: 288px;
+  }
+
+  .catImg {
+    width: 90vw;
+    max-width: 288px;
+  }
+
+  .actionArea {
+    width: 100%;
+  }
+}
