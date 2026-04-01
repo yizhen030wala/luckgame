@@ -11,7 +11,7 @@ export default function Layout() {
     <div className={styles.layout}>
       <header className={styles.header}>
         <button className={styles.logoBtn} onClick={() => navigate('/')} aria-label="回到首頁">
-          <img src="/images/logo.svg" alt="貓蝸" width="40" height="40" />
+          <img src={`${import.meta.env.BASE_URL}images/logo.svg`} alt="貓蝸" width="40" height="40" />
         </button>
         <div className={styles.headerButtons}>
           <button className={styles.iconBtn} aria-label="切換深色模式" onClick={toggleTheme}>

@@ -59,10 +59,10 @@ export default function NormalDivinationPage() {
 
       <div className={styles.imagePicker}>
         <button className={`${styles.imageOption} ${styles.imageOptionLeft}`} onClick={handleImageSelect} aria-label="選擇左邊">
-          <img src="/images/option-left.png" alt="左邊選項" className={styles.optionImg} />
+          <img src={`${import.meta.env.BASE_URL}images/option-left.png`} alt="左邊選項" className={styles.optionImg} />
         </button>
         <button className={`${styles.imageOption} ${styles.imageOptionRight}`} onClick={handleImageSelect} aria-label="選擇右邊">
-          <img src="/images/option-right.png" alt="右邊選項" className={styles.optionImg} />
+          <img src={`${import.meta.env.BASE_URL}images/option-right.png`} alt="右邊選項" className={styles.optionImg} />
         </button>
       </div>
     </div>

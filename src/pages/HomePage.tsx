@@ -25,9 +25,9 @@ export default function HomePage() {
         */}
         <div className={styles.titleFrame}>
           {/* 底層：氣泡框動畫 */}
-          <img src="/gifs/title-bg.gif" alt="" className={styles.titleBgImg} />
+          <img src={`${import.meta.env.BASE_URL}gifs/title-bg.gif`} alt="" className={styles.titleBgImg} />
           {/* 中層：「今天運氣如何」毛筆字 */}
-          <img src="/images/title.png" alt="今天運氣如何" className={styles.titleDecImg} />
+          <img src={`${import.meta.env.BASE_URL}images/title.png`} alt="今天運氣如何" className={styles.titleDecImg} />
           {/* 上層：副標題文字，在氣泡主體內約 y:120-155 (顯示後相對 frame: ~90px) */}
           <p className={styles.titleText}>讓貓蝸來幫你占卜！</p>
         </div>
@@ -39,7 +39,7 @@ export default function HomePage() {
           - Frame 高 290px → 顯示 image y:147~437（含頭部到下半身）
         */}
         <div className={styles.catFrame}>
-          <img src="/gifs/cat-wakeup.gif" alt="貓蝸" className={styles.catImg} />
+          <img src={`${import.meta.env.BASE_URL}gifs/cat-wakeup.gif`} alt="貓蝸" className={styles.catImg} />
         </div>
 
         {/* Action Area */}
