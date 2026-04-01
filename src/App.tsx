@@ -9,7 +9,7 @@ import ResultPage from '@/pages/ResultPage'
 function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/luckgame">
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<HomePage />} />
